@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  
+  <title>Frontend Mentor | Todo app</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="backImage">
+    
+  </div>
+  <div class="container">
+    <div class="todoApp">
+      <div class="header"><h2>TODO</h2><span id="light"></span></div>
+
+        <!-- To add tasks -->
+      <div class="taskBar"><div class="inputInner"><input type="text" name="taskName" id="addTask" placeholder="Create a new todo..."></div></div>
+      <div class="taskArea">
+
+        <div class="taskDisplay">
+            <!-- Tasks to be added here -->
+        </div>
+
+          <!-- Action on tasks -->
+        <div class="actionArea">
+          <div>
+          <p class="taskLeft"><span class="taskNum">0</span> items left</p>
+          <div class="taskType">
+            <span class="allTask">All</span>
+            <span class="activeTask">Active</span>
+            <span class="completedTask">Completed</span>
+          </div>
+          <span class="clear">Clear Completed</span>
+         </div>
+        </div>
+        
+      </div>
+      <div class="taskType2">
+        <span class="allTask">All</span>
+        <span class="activeTask">Active</span>
+        <span class="completedTask">Completed</span>
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+</html>

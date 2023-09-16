@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+body{
+    background-color: hsl(235, 21%, 11%);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    height: 100vh;    
+    transition: all 0.1s ease-in-out;
+}
+.backImage{
+    background: url(bg-desktop-dark.jpg);
+    width: 100%;
+    height: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.container{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.todoApp{
+    width: 500px;
+    top: 20%;
+    position: absolute;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+}
+
+.header h2{
+    letter-spacing: 0.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+#light{
+    width: 25px;
+    height: 25px;
+    background-image: url(icon-sun.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.header img{
+    width: 26px;
+    cursor: pointer;
+}
+
+.taskBar{
+    width: 100%;
+    background: hsl(235, 24%, 19%);
+    border-radius: 4px;
+    padding: 15px 12px;
+    box-shadow: 0px 0px 30px -6px hsl(235, 21%, 11%);
+}
+input{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 35px;
+    position: relative;
+    font-size: 15px;
+    width: 100%;
+}
+
+.inputInner{
+    position: relative;
+}
+
+.inputInner::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-position:center;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.taskArea{
+    margin-top: 2rem;
+    background: hsl(235, 24%, 19%);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 0px 30px -6px hsl(235, 21%, 11%);
+}
+
+.taskWrapper{
+    position: relative;
+    padding: 17px 12px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.tasks{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    user-select: none;
+}
+
+.tasks::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    left: 0px;
+}  
+
+li.checked{
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+li.checked::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-image: url(check.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    position: absolute;
+    left: 0px;
+}   
+
+.cross{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+.taskWrapper:hover .cross{
+    opacity: 1;
+    
+}
+
+.actionArea{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 12px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.actionArea >div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.actionArea p, .actionArea span{
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    user-select: none;
+}
+
+.actionArea p:hover, .actionArea span:hover{
+    color: hsl(220, 98%, 61%);
+}
+
+.taskType{
+    display: flex;
+    gap: 10px;
+}
+.taskType2{
+    display: none;
+}
+.day .backImage{
+    background: url(bg-desktop-light.jpg);
+    width: 100%;
+    height: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.day{
+    background: white;
+}
+.day #light{
+    background-image: url(icon-moon.svg);
+}
+.day .taskArea{
+    background: white;
+    box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.6);
+}
+.day .taskBar{
+    background: white;
+    box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.6);
+}
+
+.day .taskBar input{
+    color: black;
+}
+
+.day .taskWrapper{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.day .tasks{
+    color: black;
+}
+.day .tasks::before{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.day li.checked{
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.day .actionArea{
+    color: rgba(0, 0, 0, 0.6);
+}
+.day .inputInner::before{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+.day .cross{
+    color: rgba(0,0,0,0.4);
+}
+
+@media screen and (max-width: 950px){
+    .backImage{
+        background-size: auto;
+    }
+
+    .day .backImage{
+        background-size: auto;
+    }
+}
+
+@media screen and (max-width: 550px){
+    h2{
+        font-size: 1.8rem;
+    }
+    .header{
+        margin-bottom: 3rem;
+    }
+    .todoApp{
+        width: 85%;
+        top: 15%;
+    }
+    body{
+        font-size: 14px;
+    }
+    .taskType{
+        display: none;
+    }
+    .taskType2{
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        background: hsl(235, 24%, 19%);
+        border-radius: 4px;
+        box-shadow: 0px 0px 30px -6px hsl(235, 21%, 11%);
+        padding: 13px 12px;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 5%;
+        gap: 10px;
+    }
+    .day .taskType2{
+        background: white;
+        box-shadow: 0px 0px 18px -6px rgba(0, 0, 0, 0.6);
+        color: rgba(0, 0, 0, 0.6);
+
+    }
+}
